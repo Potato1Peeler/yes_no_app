@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const Color _customColor = Color(0xFFD411C4);
+const Color _customColor = Color(0xFFFFFFFF);
 
 const List<Color> _colorThemes = [
   _customColor,
@@ -26,7 +26,6 @@ class AppTheme {
       useMaterial3: true,
       
       colorSchemeSeed: _colorThemes[selectedColor],
-      brightness: Brightness.dark,
     );
   }
 }
