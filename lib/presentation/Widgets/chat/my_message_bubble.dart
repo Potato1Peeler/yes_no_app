@@ -25,7 +25,7 @@ class MyMessageBubble extends StatelessWidget {
             child: Text(message.text, style: TextStyle(color: Colors.white),),
           ),
         ),
-        const SizedBox(height: 10,)
+        const SizedBox(height: 5,)
       ],
     );
   }
