@@ -54,7 +54,7 @@ class _ChatView extends StatelessWidget {
                       //si es par es de ella, si no, es mio 
                       //return (index %2 == 0)
                     return (message.fromWho == FromWho.hers) 
-                      ? HerMessageBubble()
+                      ? HerMessageBubble(message: message)
                       : MyMessageBubble(message: message);
                     })),
             //caja de texto de mensajes
