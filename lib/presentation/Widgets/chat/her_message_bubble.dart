@@ -8,26 +8,55 @@ class HerMessageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colors = Theme.of(context).colorScheme;
+    DateTime ahora = DateTime.now();
+    String horaCompleta = "${ahora.hour}:${ahora.minute}";
+
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            color: colors.secondary,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              message.text,
-              style: TextStyle(color: Colors.white),
+        Row(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: colors.secondary,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Text(
+                  message.text,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
             ),
-          ),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                child: Icon(Icons.check_circle_rounded,
+                color: Colors.blue,
+                size: 30,),
+                ),
+            ),
+            SizedBox(width: 20),
+            Container(
+              child: Text(
+                horaCompleta,
+                style: TextStyle(
+                  color: Colors.black
+                ),
+              ),
+            ),
+          ],
         ),
-        const SizedBox(
+        SizedBox(
           height: 5,
         ),
+        
         //Signo de exclamación: que siempre va a devolver una image
         _ImageBubble(imageUrl: message.imageUrl!,),
         
